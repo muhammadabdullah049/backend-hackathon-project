@@ -7,6 +7,9 @@ import "dotenv/config";
 import testStudent from "./routers/testStudent.js";
 import userRoute from "./routers/userRoute.js";
 import authRoute from "./routers/authRoute.js";
+import loanCategory from "./routers/loanCategories.js";
+import subCategories from "./routers/subCategories.js";
+import userRegister from "./routers/userRegistration.js";
 
 // Initialize express app
 const app = express();
@@ -36,6 +39,9 @@ mongoose
 app.use("/user", userRoute);
 app.use("/auth", authRoute);
 app.use("/student", testStudent);
+app.use("/loan", loanCategory);
+app.use("/sub-loan", subCategories);
+app.use("/register",userRegister);
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
